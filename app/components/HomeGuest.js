@@ -3,7 +3,7 @@ import Page from "./Page";
 import Axios from "axios";
 
 function HomeGuest() {
-  const [username, setUserName] = useState();
+  const [username, setUsername] = useState();
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
 
@@ -11,9 +11,9 @@ function HomeGuest() {
     e.preventDefault();
     try {
       await Axios.post("http://localhost:8080/register", {
-        username: "test",
-        email: "test@test.com",
-        password: "qwerty123456",
+        username,
+        email,
+        password,
       });
       console.log("User was successfully created!");
     } catch (e) {
@@ -40,7 +40,7 @@ function HomeGuest() {
                 <small>Username</small>
               </label>
               <input
-                onChange={(e) => setUserName(e.target.value)}
+                onChange={(e) => setUsername(e.target.value)}
                 id="username-register"
                 name="username"
                 className="form-control"
