@@ -12,7 +12,11 @@ export default function HeaderLoggedOut() {
         username,
         password,
       });
-      console.log(response.data);
+      if (response.data) {
+        console.log(response.data);
+      } else {
+        console.log("incorrect username / password");
+      }
     } catch (e) {
       console.log("There was an error.");
     }
